@@ -354,6 +354,10 @@ img {
   height: clamp(460px, 500vw, 910px);
   transition: transform 0.5s;
 }
+
+#book {
+    transition: transform 0.8s ease;
+  }
 /* DESKTOP */
 .flipbook-desktop {
   display: flex;

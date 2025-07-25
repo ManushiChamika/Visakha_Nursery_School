@@ -80,10 +80,8 @@
 
   <!-- ============ DESKTOP: FLIPBOOK ============ -->
   <div class="flipbook-desktop">
-    <!-- Previous Button -->
-    <button id="prev-btn" aria-label="Previous page">
-      <i class="fas fa-arrow-circle-left"></i>
-    </button>
+        <!-- Previous Button -->
+ <button id="prev-btn" title="Go to previous page"><i class="fas fa-arrow-left"></i></button>
 
     <!-- Book Wrapper -->
     <div id="book" class="book">
@@ -104,32 +102,42 @@
         </div>
       </div>
 
-      <!-- Paper 2 -->
-      <div id="p2" class="paper">
-        <div class="front">
-          <div id="f2" class="front-content">
-            <div>
-              <h1>Building a Legacy in Education</h1>
-              <p>
-            But it was not wealth that defined her legacy; it was her unwavering commitment to empowering girls through education. In 1917, she laid the foundation for what would become Visakha Vidyalaya — a place dedicated to nurturing confident, educated, and value-driven young women.
+<!-- Paper 2 -->
+<!-- Paper 2 -->
+<div id="p2" class="paper">
+  <div class="front">
+    <div id="f2" class="front-content">
+      <div>
+        <h1>Building a Legacy in Education</h1>
+        <p>
+          But it was not wealth that defined her legacy; it was her unwavering commitment to empowering girls through education. In 1917, she laid the foundation for what would become Visakha Vidyalaya — a place dedicated to nurturing confident, educated, and value-driven young women.
 
-Her legacy of compassion and foresight continued to inspire generations. In the spirit of her vision, Visakha Nursery School was later established — a haven where the seeds of curiosity, kindness, and lifelong learning could be gently sown during the earliest years of a child's life.
-
-          </p>
-
-            </div>
-          </div>
-        </div>
-        <div class="back">
-          <div id="b2" class="back-content">
-            <div>
-              <h1>The Legacy Continues: Birth of Visakha Nursery School</h1>
-              <p>On March 2, 1959, the next chapter in her legacy began — the birth of Visakha Nursery School. Built upon the vision that education should begin at the roots, this institution welcomed 150 young learners in its first year. Founded with the same spirit of compassion, cultural pride, and Buddhist values, the nursery school offered not just preschooling, but a life-shaping foundation. Through joyful learning, mindfulness, and creative exploration, it became a sanctuary where children were nurtured to blossom as confident, caring individuals — just as Mrs. Dias would have wished.
-</p>
-            </div>
-          </div>
+          Her legacy of compassion and foresight continued to inspire generations. In the spirit of her vision, Visakha Nursery School was later established — a haven where the seeds of curiosity, kindness, and lifelong learning could be gently sown during the earliest years of a child's life.
+        </p>
+        <div style="text-align: center; margin-top: 20px;">
+          <img 
+            src="./images/index page/jeremias.jpeg" 
+            alt="Ms. Celestina Dias" 
+            style="max-width: 80%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);margin-left: 25%;"
+          />
+          <p style="font-size: 0.9rem; margin-top: 10px; color: #555;text-align: center;"><em>Mrs. Jeremias Dias — A visionary in girls’ education</em></p>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="back">
+    <div id="b2" class="back-content">
+      <div>
+        <h1>The Legacy Continues: Birth of Visakha Nursery School</h1>
+        <p>
+          On March 2, 1959, the next chapter in her legacy began — the birth of Visakha Nursery School. Built upon the vision that education should begin at the roots, this institution welcomed 150 young learners in its first year. Founded with the same spirit of compassion, cultural pride, and Buddhist values, the nursery school offered not just preschooling, but a life-shaping foundation. Through joyful learning, mindfulness, and creative exploration, it became a sanctuary where children were nurtured to blossom as confident, caring individuals — just as Mrs. Dias would have wished.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
       <!-- Paper 3 -->
       <div id="p3" class="paper">
@@ -179,10 +187,8 @@ Her noble vision has been lovingly carried forward across generations. It was fi
       </div>
     </div>
 
-    <!-- Next Button -->
-    <button id="next-btn" aria-label="Next page">
-      <i class="fas fa-arrow-circle-right"></i>
-    </button>
+        <!-- Next Button -->
+    <button id="next-btn" title="Turn to next page"><i class="fas fa-arrow-right"></i></button>
   </div>
 
   <!-- ============ MOBILE: SLIDER VERSION ============ -->
@@ -569,6 +575,112 @@ Her noble vision has been lovingly carried forward across generations. It was fi
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
+<!-- Turn.js + jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+
+<!-- Page Flip Sound -->
+<audio id="flipSound" src="https://www.soundjay.com/misc/sounds/page-flip-4.mp3" preload="auto"></audio>
+
+<script>
+  $(document).ready(function () {
+    $('#book').turn({
+      width: 1200,
+      height: 700,
+      autoCenter: true,
+      duration: 1200,
+      elevation: 50,
+      gradients: true,
+      when: {
+        turning: function () {
+          document.getElementById('flipSound').play();
+        }
+      }
+    });
+
+    $('#next-btn').click(function () {
+      $('#book').turn('next');
+    });
+
+    $('#prev-btn').click(function () {
+      $('#book').turn('previous');
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    const bookElement = document.getElementById('book');
+
+    // Ensure the element exists before applying styles
+    if (bookElement) {
+      Object.assign(bookElement.style, {
+        transformStyle: 'preserve-3d',
+        backfaceVisibility: 'hidden',
+        perspective: '1500px'
+      });
+    }
+
+    // Initialize Turn.js
+    $('#book').turn({
+      width: 1200,
+      height: 700,
+      autoCenter: true,
+      duration: 1000,      // Snappier flip
+      elevation: 50,       // Lower elevation for better performance
+      gradients: false,    // Disable gradients
+      acceleration: true,
+      easing: 'ease-out',
+      display: 'double',
+
+      when: {
+        turning: function (e, page) {
+          requestAnimationFrame(() => {
+            const sound = document.getElementById('flipSound');
+            if (sound) {
+              sound.currentTime = 0;
+              sound.play();
+            }
+          });
+        },
+        turned: function (e, page) {
+          requestAnimationFrame(() => toggleNavButtons(page));
+        }
+      }
+    });
+
+    // Add GPU acceleration to pages
+    $('.page').css({
+      'transform': 'translate3d(0,0,0)',
+      'backface-visibility': 'hidden'
+    });
+
+    function toggleNavButtons(currentPage) {
+      const totalPages = $("#book").turn("pages");
+
+      $('#prev-btn').toggle(currentPage !== 1);
+      $('#next-btn').toggle(currentPage !== totalPages);
+    }
+
+    // Navigation buttons
+    $('#prev-btn').click(function () {
+      $("#book").turn("previous");
+    });
+
+    $('#next-btn').click(function () {
+      $("#book").turn("next");
+    });
+
+    // Initialize nav visibility on load
+    toggleNavButtons($("#book").turn("page"));
+  });
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/turn.js@4/turn.min.js"></script>
+
+
 
 
 

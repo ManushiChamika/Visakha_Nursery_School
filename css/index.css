@@ -296,6 +296,22 @@ img {
 .menu-toggle:focus {
   color: var(--color-accent);
 }
+#prev-btn[title]:hover::after,
+#next-btn[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  background: #000;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 5px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transform: translateY(-5px);
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
 
 /* =========================================================
    TABLET & BELOW (≤ 1024 px)
@@ -539,14 +555,14 @@ img {
 
 .hero__name {
   display: block;
-  font-size: clamp(3rem, 4vw + 2rem, 5rem);
+  font-size: clamp(3rem, 3vw + 2rem, 4.8rem);
   font-weight: 700;
 }
 
 .hero__subname {
   display: block;
-  font-size: clamp(1.5rem, 3vw + 1.2rem, 4.4rem);
-  font-weight: 500;
+  font-size: clamp(3rem, 3vw + 2rem, 4.8rem);
+  font-weight: 700;
   margin-bottom: var(--space-xl);
 }
 
