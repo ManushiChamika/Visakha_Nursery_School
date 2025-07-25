@@ -1,3 +1,9 @@
+
+// Close the popup
+function closeWelcomePopup() {
+  document.getElementById("welcomePopup").style.display = "none";
+}
+
 // Toggle navigation for mobile
 const toggleBtn = document.querySelector('.menu-toggle');
 const nav = document.getElementById('main-nav');
