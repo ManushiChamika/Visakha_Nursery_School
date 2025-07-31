@@ -806,7 +806,7 @@ section-title {
     border-radius: 2px;
 } */
 .staff-card__image img {
-  height: 300px;        /* Or adjust as needed */
+  height: 200px;        /* Or adjust as needed */
   object-fit: cover;    /* Ensures the image fills without distortion */
   width: 100%;
   border-radius: 2rem;

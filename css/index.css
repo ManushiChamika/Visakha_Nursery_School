@@ -408,10 +408,11 @@ img {
   z-index:50;
 }
 
-.social a img {
+.social a:not(.medium) img {
   filter: brightness(0) saturate(100%) invert(90%) sepia(92%) saturate(552%) hue-rotate(3deg) brightness(102%) contrast(105%);
   transition: filter var(--transition-fast), transform var(--transition-fast);
 }
+
 
 .social a:hover img {
   filter: brightness(0) saturate(100%) invert(20%) sepia(83%) saturate(6480%) hue-rotate(228deg) brightness(93%) contrast(94%);

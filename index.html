@@ -6,19 +6,19 @@
   <title>Visakha Nursery School</title>
 
   <!-- Link the external stylesheet -->
+  <link rel="stylesheet" href="/css/contact-popup.css" />
   <link rel="stylesheet" href="./css/index.css" />
   <!-- Load Font Awesome 6 Free (JS + SVG) via CDN -->
 <script defer
   src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
   integrity="sha512‑..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 </head>
 <body>
 
   <!-- ============  SOCIAL SIDE BAR  ============ -->
 <ul class="social">
   <li>
-    <a href="#" aria-label="Facebook">
+    <a href="https://www.facebook.com/people/Visakha-Nursery-School/100057645362056/" aria-label="Facebook">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="" />
     </a>
   </li>
@@ -28,20 +28,23 @@
     </a>
   </li> -->
   <li>
-    <a href="#" aria-label="YouTube">
+    <a href="https://www.youtube.com/@VisakhaNurserySchool-d7s" aria-label="YouTube">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="" />
     </a>
   </li>
-  <li>
-  <a href="#" aria-label="Medium" >
-    <img src="./images/index page/medium_v.png" alt="Medium" style="width:100%; height:100%;" />
-  </a>
+<li>
+  <a href="https://medium.com/@visakhanurseryschool" aria-label="Medium" class="medium">
+  <img src="./images/index page/medium_v.png" alt="Medium" style="width:100%; height:100%;" />
+</a>
+
 </li>
-  <li>
-  <a href="#" aria-label="gmail">
+
+<li>
+  <a href="mailto:visakhanursery4@gmail.com" aria-label="gmail">
     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Gmail" />
   </a>
-  </li>
+</li>
+
   
 </ul>
 
@@ -301,42 +304,60 @@
       </p>
 
       <ul class="footer__contact">
-        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>133, Vajira Road, Colombo 04</li>
-        <li><i class="fa-solid fa-phone" aria-hidden="true"></i>+94 11 2588229</li>
-        <li><i class="fa-solid fa-envelope" aria-hidden="true"></i>info@visakhanursery.lk</li>
+<li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>&nbsp;&nbsp;133, Vajira Road, Colombo 04</li>
+<li><i class="fa-solid fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;011 2584 003</li>
+<li><i class="fa-solid fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;info@visakhanursery.lk</li>
+
       </ul>
     </div>
 
-    <!-- ◂ Navigation column (Header links only) -->
-    <div class="footer__links">
+    <!-- ◂ Navigation columns -->
+    <div class="footer__links" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+
+      <!-- Quick Links -->
       <div class="footer-col">
         <h3 class="footer-col__title">Quick Links</h3>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Board of Trustees</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="/learning.html">Learning</a></li>
+          <li><a href="/admission.html">Admissions</a></li>
+          <li><a href="./events.html">Events</a></li>
+          <li><a href="/leadership.html">Leadership</a></li>
         </ul>
 
-        <!-- ◂ Social icons -->
-        <div class="footer__social" aria-label="Social links">
+        <!-- Social icons -->
+        <div class="footer__social" aria-label="Social links" style="margin-top: 1rem;">
           <span class="footer__social-label">Follow us on</span><br/>
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Medium" class="medium">
+            <i class="fa-brands fa-medium" aria-hidden="true"></i>
+          </a>
           <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="mailto:visakhanursery4@gmail.com" aria-label="Gmail">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
+
+      <!-- More Links -->
+      <div class="footer-col">
+        <h3 class="footer-col__title">More Links</h3>
+        <ul>
+          <li><a href="./contact-popup.html" class="btn btn-outline" onclick="openContactPopup(); return false;">Contact Us</a></li>
+          <li><a href="https://forms.gle/WS9uB7x4SPEvnNmf7" class="btn btn-primary">Register Student for 2025/2026</a></li>
+        </ul>
+      </div>
+
     </div>
   </div>
 
   <!-- ▸ Legal + Copyright -->
-  <div class="footer__legal">
-    <nav class="legal-nav" aria-label="Legal links">
-      <a href="#">Privacy Policy</a>
+  <div class="footer__legal" style="margin-top: 2rem; font-size: 0.9rem;">
+    <nav class="legal-nav" aria-label="Legal links" style="margin-bottom: 0.5rem;">
+      <a href="#">Privacy Policy</a>
       <span>|</span>
-      <a href="#">Terms and Conditions</a>
+      <a href="#">Terms and Conditions</a>
     </nav>
 
     <p class="legal-disclaimer">
@@ -345,7 +366,7 @@
       content is prohibited. By using our site or services, you agree to this disclaimer, which may change without notice.
     </p>
 
-    <p class="legal-copy">© 2025 Visakha Nursery School, Colombo, Sri Lanka</p>
+    <p class="legal-copy">© 2025 Visakha Nursery School, Colombo, Sri Lanka</p>
   </div>
 
   <!-- Back‑to‑top -->
@@ -381,7 +402,9 @@
     }
   }
 </script>
-
+<div id="contactPopupContainer" class="hidden"></div>
+<!-- Contact popup script -->
+<script src="/js/contact-popup.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const backToTopBtn = document.querySelector('.back-to-top');
